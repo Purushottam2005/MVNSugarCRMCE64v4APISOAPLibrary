@@ -30,6 +30,10 @@
 			</roles>
 		</developer>
 	</developers>
+	<scm>
+		<url>https://github.com/amusarra/MVNSugarCRMCE64v4APISOAPLibrary/tree/master/sugarcrmce-64-v4-soap-api</url>
+		<connection>scm:git:git://github.com/amusarra/MVNSugarCRMCE64v4APISOAPLibrary.git</connection>
+	</scm>
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
