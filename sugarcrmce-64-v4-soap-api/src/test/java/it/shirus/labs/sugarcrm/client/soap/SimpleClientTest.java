@@ -15,6 +15,7 @@ import javax.xml.namespace.QName;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.core.io.ClassPathResource;
 
 import com.sugarcrm.sugarcrm.Sugarsoap;
 import com.sugarcrm.sugarcrm.SugarsoapPortType;
@@ -33,7 +34,7 @@ public class SimpleClientTest {
 
 	@Before
 	public void setUp() throws FileNotFoundException, IOException {
-		p.load(getClass().getResourceAsStream("SimpleClientTest.properties"));
+		p.load((new ClassPathResource("SimpleClientTest.properties")).getInputStream());
 	}
 
 	@Test
