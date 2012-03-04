@@ -5,7 +5,8 @@
 	<artifactId>sugarcrmce-64-v4-soap-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SugarCRM Community Edition 6.4 (v4 API) SOAP Client</name>
-	<description>The SugarCRM SOAP Client (Apache CXF)</description>
+	<description>Java SOAP Client for accessing Web Services exposed by SugarCRM. The client version of the framework is based on Apache CXF 2.5. The client was built on SugarCRM Community Edition 6.4 for API v4.
+For more information on the web services of SugarCRM and versioning APIs, refer to the official documentation of Sugar.</description>
 	<inceptionYear>2012</inceptionYear>
 	<organization>
 		<name>Antonio Musarra</name>
@@ -33,7 +34,22 @@
 	<scm>
 		<url>https://github.com/amusarra/MVNSugarCRMCE64v4APISOAPLibrary/tree/master/sugarcrmce-64-v4-soap-api</url>
 		<connection>scm:git:git://github.com/amusarra/MVNSugarCRMCE64v4APISOAPLibrary.git</connection>
+		<tag>master</tag>
 	</scm>
+	<distributionManagement>
+		<repository>
+			<uniqueVersion>false</uniqueVersion>
+			<id>shirus-labs-rep.dontesta.it</id>
+			<name>Shirus Labs Corporate Repository</name>
+			<url>ftp://www.dontesta.it/dontesta.it/projects/maven/repositories</url>
+			<layout>default</layout>
+		</repository>
+		<site>
+			<id>sugarcrmceesoapapi.dontesta.it</id>
+			<name>SugarCRM Community Edition 6.4 (v4 API) SOAP Client</name>
+			<url>ftp://www.dontesta.it/dontesta.it/projects/maven/sites/${project.artifactId}/</url>
+		</site>
+	</distributionManagement>
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
@@ -63,6 +79,14 @@
 		</dependency>
 	</dependencies>
 	<build>
+		<extensions>
+			<!-- Enabling the use of FTP -->
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ftp</artifactId>
+				<version>1.0</version>
+			</extension>
+		</extensions>
 		<plugins>
 			<!-- Generate Java classes from WSDL during build -->
 			<plugin>
@@ -123,6 +147,73 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-site-plugin</artifactId>
+					<version>3.0</version>
+					<dependencies>
+						<dependency><!-- add support for ftp -->
+							<groupId>org.apache.maven.wagon</groupId>
+							<artifactId>wagon-ftp</artifactId>
+							<version>1.0</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.apache.cxf
+										</groupId>
+										<artifactId>
+											cxf-codegen-plugin
+										</artifactId>
+										<versionRange>
+											[2.5.2,)
+										</versionRange>
+										<goals>
+											<goal>wsdl2java</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.codehaus.mojo
+										</groupId>
+										<artifactId>
+											build-helper-maven-plugin
+										</artifactId>
+										<versionRange>
+											[1.7,)
+										</versionRange>
+										<goals>
+											<goal>add-source</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
 	<url>http://musarra.wordpress.com</url>
 </project>
