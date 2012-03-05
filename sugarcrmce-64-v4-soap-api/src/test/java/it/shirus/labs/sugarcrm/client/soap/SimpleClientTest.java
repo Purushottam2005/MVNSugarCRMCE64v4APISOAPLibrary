@@ -57,7 +57,7 @@ public class SimpleClientTest {
 		SugarsoapPortType port = ss.getSugarsoapPort();
 
 		System.out.println("SugarCRM Server Info...");
-		assertEquals("Version","6.4.0", port.getServerInfo().getVersion());
+		assertEquals("Version","6.4.1", port.getServerInfo().getVersion());
 		assertEquals("Flavor","CE", port.getServerInfo().getFlavor());
 		System.out.println("SugarCRM Server Info...[ OK ]");
 		
