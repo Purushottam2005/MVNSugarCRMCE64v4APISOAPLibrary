@@ -781,7 +781,7 @@
 </binding>
 <service name="sugarsoap">
   <port name="sugarsoapPort" binding="tns:sugarsoapBinding">
-    <soap:address location="http://localhost:8888/SugarCE-Full-6.4.0/service/v4/soap.php"/>
+    <soap:address location="http://http://shirus-crm1.phpfogapp.com/service/v4/soap.php"/>
   </port>
 </service>
 </definitions>
