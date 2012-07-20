@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>it.dontesta.sugarcrm.client.soap</groupId>
 	<artifactId>sugarcrmce-64-v4-soap-api</artifactId>
-	<version>1.0.3-SNAPSHOT</version>
+	<version>1.0.3</version>
 	<name>SugarCRM Community Edition 6.4 (v4 API) SOAP Client</name>
 	<description>Java SOAP Client for accessing Web Services exposed by SugarCRM. The client version of the framework is based on Apache CXF 2.5. The client was built on SugarCRM Community Edition 6.4 for API v4.
 For more information on the web services of SugarCRM and versioning APIs, refer to the official documentation of Sugar.</description>
