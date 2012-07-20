@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>it.shirus.labs.sugarcrm.client.soap</groupId>
 	<artifactId>sugarcrmce-64-v4-soap-api</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>SugarCRM Community Edition 6.4 (v4 API) SOAP Client</name>
 	<description>Java SOAP Client for accessing Web Services exposed by SugarCRM. The client version of the framework is based on Apache CXF 2.5. The client was built on SugarCRM Community Edition 6.4 for API v4.
 For more information on the web services of SugarCRM and versioning APIs, refer to the official documentation of Sugar.</description>
@@ -146,7 +146,22 @@ For more information on the web services of SugarCRM and versioning APIs, refer 
 					</descriptorRefs>
 				</configuration>
 			</plugin>
-		</plugins>
+			
+			<!-- Maven GPG Plugin -->		
+		      <plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-gpg-plugin</artifactId>
+		        <executions>
+		          <execution>
+		            <id>sign-artifacts</id>
+		            <phase>verify</phase>
+		            <goals>
+		              <goal>sign</goal>
+		            </goals>
+		          </execution>
+		        </executions>
+		      </plugin>			
+			</plugins>
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -216,4 +231,9 @@ For more information on the web services of SugarCRM and versioning APIs, refer 
 		</pluginManagement>
 	</build>
 	<url>http://musarra.wordpress.com</url>
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
 </project>
