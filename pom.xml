@@ -236,4 +236,8 @@ For more information on the web services of SugarCRM and versioning APIs, refer 
 		<artifactId>oss-parent</artifactId>
 		<version>7</version>
 	</parent>
+	<issueManagement>
+		<url>https://github.com/amusarra/MVNSugarCRMCE64v4APISOAPLibrary/issues</url>
+		<system>GitHub</system>
+	</issueManagement>
 </project>
