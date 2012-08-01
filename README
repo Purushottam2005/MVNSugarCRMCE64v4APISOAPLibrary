@@ -1,0 +1,12 @@
+Java SOAP Client for accessing Web Services exposed by SugarCRM. 
+The client version of the framework is based on Apache CXF 2.5.
+
+The client was built on SugarCRM Community Edition 6.4 for API v4.
+For more information on the web services of SugarCRM and versioning APIs, 
+refer to the official documentation of Sugar.
+
+For more information visit this resources:
+	a) Antonio Musarra Blog - http://musarra.wordpress.com
+	b) Project Information - http://www.dontesta.it/projects/maven/sites/sugarcrmce-64-v4-soap-api/project-info.html
+	c) Maven Project for SugarCRM Java Web Services Client - http://musarra.wordpress.com/2012/03/05/maven-project-for-sugarcrm-javawebservicesclient/
+	d) Released the first version of SugarCRM Java Client - http://musarra.wordpress.com/2012/07/23/released-the-first-version-of-sugarcrm-java-client/
