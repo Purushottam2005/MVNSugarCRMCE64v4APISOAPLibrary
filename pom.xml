@@ -50,6 +50,14 @@ For more information on the web services of SugarCRM and versioning APIs, refer 
 			<url>ftp://www.dontesta.it/dontesta.it/projects/maven/sites/${project.artifactId}/</url>
 		</site>
 	</distributionManagement>
+	<reporting>
+		<plugins>
+			<plugin>
+                   <groupId>org.apache.maven.plugins</groupId>
+                   <artifactId>maven-changelog-plugin</artifactId>
+              </plugin>
+		</plugins>
+	</reporting>
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
